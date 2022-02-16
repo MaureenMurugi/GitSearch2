@@ -1,5 +1,5 @@
 <!-- <app-navbar></app-navbar> -->
-<div class="container"*ngIf="profile">
+<!-- <div class="container"*ngIf="profile">
   <div class="content">
     <div class="panel-body">
       <div class="row">
@@ -36,5 +36,45 @@
     </div>
   </div>
 </div>
-
-
+ -->
+<!-- <app-navbar></app-navbar> -->
+ <div class="container">
+  <div class="row">
+      <div class="col-md-12 col-lg-12 col-sm-12">
+          <h3>My github account</h3>
+          <hr>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-4 col-lg-4 col-sm-12">
+          <div class="card">
+              <div class="card-header">
+                  <h4 class="text-center">Account</h4>
+              </div>
+              <img src="{{ profile.avatar_url}}" class="rounded-circle card-img-top" alt="{{ profile.login }}" width="25px">
+              <div class="card-body">
+                  <ul class="list-group list-group-flush">
+                      <li class="list-group-item" appHighlight>{{ profile.login }}</li>
+                      <li class="list-group-item">{{ profile.public_repos }} public repos</li>
+                      <li class="list-group-item updated">Updated {{ profile.updated_at }}</li>
+                    </ul>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-8 col-lg-8 col-sm-12">
+          <div class="card">
+              <div class="card-header" >
+                  <h4>Repositories</h4>
+              </div>
+              <div class="card-body">
+                  <div class="row" *ngFor="let repo of repos">
+                     <ul class="list-group list-group-flush">
+                      <li class="list-group-item" > {{repo.name}}</li>
+                    </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+</div>

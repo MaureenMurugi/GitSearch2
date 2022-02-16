@@ -1,5 +1,4 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { ProfileComponent } from '../components/profile/profile.component';
 import { SearchService } from '../services/search.service';
 
 
@@ -13,22 +12,16 @@ export class SearchComponent implements OnInit {
   profile: any;
   repos: any;
 
-
-  // @Output() addQuote = new EventEmitter<Quote>();
-  // createNewQuote(){
-  //   this.addQuote.emit(this.model);
-  // }
-
   
 
   findProfile() {
-    this.searchComponent.updateProfile(this.username);
-    this.searchComponent.getProfileInfo().subscribe((profile: any) => {
+    this.searchComponent.updateSearch(this.username);
+    this.searchComponent.getSearchInfo().subscribe((profile: any) => {
       console.log(profile);
       this.profile = profile;
     });
 
-    this.searchComponent.getProfileRepos().subscribe((repos: any) => {
+    this.searchComponent.getSearchRepos().subscribe((repos: any) => {
       console.log(repos);
       this.repos = repos;
     }) 
